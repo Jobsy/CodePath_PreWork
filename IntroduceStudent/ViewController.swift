@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var morePetsStepper: UIStepper!
     @IBOutlet weak var morePetsSwitch: UISwitch!
     
+    // change the color of the background view from light to dark mode when the switch is toggled
     @IBAction func darkModeUISwitch(_ sender: UISwitch) {
         backgroundColorUIView.backgroundColor = sender.isOn ? .darkMode : .white
         textLabels.forEach { $0.textColor = sender.isOn ? .white : .black }
@@ -37,19 +38,22 @@ class ViewController: UIViewController {
         darkModeSwitch.thumbTintColor = sender.isOn ? .none : .black
     }
     
+    // show or hide the "more info" section when the switch is toggle
     @IBAction func toggleMoreInfo(_ sender: UISwitch) {
         moreInfoInputFields.forEach { $0.isHidden = !sender.isOn }
         moreInfoTextLabels.forEach { $0.isHidden = !sender.isOn }
     }
     
+    // increament or decreament pets values when stepper button is clicked
     @IBAction func stepperDidChange(_ sender: UIStepper) {
         numberOfPetsLabel.text = "\(Int(sender.value))"
     }
     
+    // show form content on alert-box when "Introduce Self" button is clicked
     @IBAction func introduceSelfDidTapped(_ sender: UIButton) {
         let year = yearSegmentedControl.titleForSegment(at: yearSegmentedControl.selectedSegmentIndex)
 
-        let introduction = "My name is \(firstNameTextField.text!) \(lastNameTextField.text!) and I attend \(schoolNameTextField.text!). I am currently in my \(year!) year and I own \(numberOfPetsLabel.text!) dogs. It is \(morePetsSwitch.isOn) that I want more pets."
+        let introduction = "My name is \(firstNameTextField.text!) \(lastNameTextField.text!) and I attend \(schoolNameTextField.text!). I am currently in my \(year!) year and I own \(numberOfPetsLabel.text!) dogs. I like \(courseNameTextField.text!) and \(sportNameTextField.text!). It is \(morePetsSwitch.isOn) that I want more pets."
 
 
         let alertController = UIAlertController(title: "My Introduction", message: introduction, preferredStyle: .alert)
@@ -61,6 +65,7 @@ class ViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    // randomly change the color of the background view when clicked
     @IBAction func changeColorButtonTapped(_ sender: UIButton) {
         backgroundColorUIView.backgroundColor = .random()
     }
