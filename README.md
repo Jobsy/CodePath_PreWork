@@ -5,9 +5,7 @@
 CodePath prework for iOS Intermediate Development! A functional app that shows the basics of navigating Xcode and Swift. This app allow us to introduce ourselves by accepting user inputs in various forms, such as switches, text fields, segmented controls, and more. It also shows how the storyboard and logic combine to make one functional app.
 
 ### App Walk-though
-
-<!-- <img src="YOUR_GIF_URL_HERE" width=200><br> OR <img src="YOUR_GIF_PATH" width=200><br> -->
-
+<img src="https://user-images.githubusercontent.com/15328651/215835902-5a1a4641-05d4-4960-b05e-82b4b51cb0d6.gif" width=200><br>
 
 ### Required Features
 
